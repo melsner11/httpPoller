@@ -65,7 +65,8 @@ All Tables will be auto generated
 ### Run the Backend
 
     ./mvnw  clean spring-boot:run   - will start REST Backend and the Poller 
-    mvn clean spring-boot:run           
+    or 
+    mvn clean spring-boot:run - when you have maven installed and in your path           
            
 #### REST Backend and Poller:            
 
@@ -76,7 +77,10 @@ http://localhost:8080/api/endpoints   to see all endpoints
 
 cd to project dir: httpPoller/app
 
-npm start - will start frontend server for react gui - localhost:3000
+    npm install - will install requirements in node_modules
+    npm audit fix
+    
+    npm start - will start frontend server for react gui - localhost:3000
 
  
 
