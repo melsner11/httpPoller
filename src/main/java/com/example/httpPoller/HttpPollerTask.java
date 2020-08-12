@@ -48,28 +48,28 @@ public class HttpPollerTask {
                     endPoint.addEndPointStatus(eps);
                     endPointRepository.save(endPoint);
                 } catch (UnknownHostException e) {
-                    logger.info("Unknown host: " + endPoint.getURL() + " Message: "+ e.getMessage());
+                    logger.warning("Unknown host: " + endPoint.getURL() + " Message: "+ e.getMessage());
 
                     EndPointStatus eps = new EndPointStatus(0, new Timestamp(date.getTime()), "Unknown host : " + e.getMessage());
                     eps.setEndPoint(endPoint);
                     endPoint.addEndPointStatus(eps);
                     endPointRepository.save(endPoint);
                 } catch (java.net.ConnectException e) {
-                    logger.info("connection exception: " + endPoint.getURL() + " Message: " + e.getMessage());
+                    logger.warning("connection exception: " + endPoint.getURL() + " Message: " + e.getMessage());
 
                     EndPointStatus eps = new EndPointStatus(0, new Timestamp(date.getTime()), "Connect exception : "  + e.getMessage());
                     eps.setEndPoint(endPoint);
                     endPoint.addEndPointStatus(eps);
                     endPointRepository.save(endPoint);
                 } catch (IOException e) {
-                    logger.info("IO Exception: " + endPoint.getURL() + " Message: " + e.getMessage());
+                    logger.warning("IO Exception: " + endPoint.getURL() + " Message: " + e.getMessage());
                     e.printStackTrace();
                 } catch (Exception e) {
-                    logger.info("Any other Exception exception: " + endPoint.getURL() + " Message: " + e.getMessage());
+                    logger.warning("Any other Exception exception: " + endPoint.getURL() + " Message: " + e.getMessage());
                     e.printStackTrace();
                 }
             }
-        }, 0, 30000);
+        }, 0, 10000);
     }
 }
 
