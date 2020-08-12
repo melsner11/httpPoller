@@ -2,8 +2,8 @@ import React, { Component } from 'react';
 import './App.css';
 import Home from './components/Home';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-import EndPointList from './components/EndPointList';
-import EndPointEdit from './components/EndPointEdit';
+import EndPointList from './components/endpoint/EndPointList';
+import EndPointEdit from './components/endpoint/EndPointEdit';
 
 class App extends Component {
   render() {
